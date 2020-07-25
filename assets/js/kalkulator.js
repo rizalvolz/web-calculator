@@ -1,4 +1,5 @@
-console.log("Selamat Anda berhasil menggunakan JavaScript pada Website")
+console.log("Web Calculator")
+
 const calculator = {
     displayNumber: '0',
     operator: null,
@@ -55,8 +56,15 @@ const calculator = {
     let result = 0;
     if (calculator.operator === "+") {
         result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
-    } else {
-        result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber)
+    } 
+    if (calculator.operator === "*") {
+        result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
+    }
+    if (calculator.operator === "/") {
+        result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber);
+    }
+    if (calculator.operator === "-") {
+        result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
     }
   
     // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
