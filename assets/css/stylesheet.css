@@ -59,7 +59,7 @@ h3 {
  
   
  .double {
-    flex-basis: 55%;
+    flex-basis: 35%;
  }
 
  .nol {
@@ -83,7 +83,7 @@ h3 {
     box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
  }
 
-.operator, .negative, .equals, .multiply {
+.operator, .negative, .equals, .percent{
    background: #f39c12;
 }
 
