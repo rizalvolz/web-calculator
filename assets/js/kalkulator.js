@@ -55,16 +55,16 @@ const calculator = {
   
     let result = 0;
     if (calculator.operator === "+") {
-        result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+        result = parseFloat(calculator.firstNumber) + parseFloat(calculator.displayNumber);
     } 
     if (calculator.operator === "*") {
-        result = parseInt(calculator.firstNumber) * parseInt(calculator.displayNumber);
+        result = parseFloat(calculator.firstNumber) * parseFloat(calculator.displayNumber);
     }
     if (calculator.operator === "/") {
-        result = parseInt(calculator.firstNumber) / parseInt(calculator.displayNumber);
+        result = parseFloat(calculator.firstNumber) / parseFloat(calculator.displayNumber);
     }
     if (calculator.operator === "-") {
-        result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
+        result = parseFloat(calculator.firstNumber) - parseFloat(calculator.displayNumber);
     }
   
     // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
@@ -72,7 +72,7 @@ const calculator = {
         firstNumber: calculator.firstNumber,
         secondNumber: calculator.displayNumber,
         operator: calculator.operator,
-        result: result
+        result: result.toFixed(2)
     }
     putHistory(history);
     calculator.displayNumber = result;
@@ -109,8 +109,10 @@ const calculator = {
             updateDisplay();
             return;
         }
-  
+         
         inputDigit(target.innerText);
         updateDisplay()
+        
     });
  }
+ 
