@@ -75,7 +75,7 @@ const calculator = {
         result: result.toFixed(2)
     }
     putHistory(history);
-    calculator.displayNumber = result.toFixed(2);
+    calculator.displayNumber = result;
     renderHistory();
  }
   
