@@ -1,4 +1,7 @@
-console.log("Web Calculator")
+console.log("Web Calculator");
+
+var value_1 = 0;
+var value_2 = 0;
 
 const calculator = {
     displayNumber: '0',
@@ -55,16 +58,34 @@ const calculator = {
   
     let result = 0;
     if (calculator.operator === "+") {
-        result = parseFloat(calculator.firstNumber) + parseFloat(calculator.displayNumber);
+        
+        if(value_1 != 0 && value_2 != 0){
+            result = parseFloat((value_1)/100) + parseFloat((value_2)/100);
+        } else {
+            result = parseFloat(calculator.firstNumber) + parseFloat(calculator.displayNumber);
+        }
+
     } 
     if (calculator.operator === "*") {
-        result = parseFloat(calculator.firstNumber) * parseFloat(calculator.displayNumber);
+        if(value_1 != 0 && value_2 != 0){
+            result = parseFloat((value_1)/100) * parseFloat((value_2)/100);
+        } else {
+            result = parseFloat(calculator.firstNumber) * parseFloat(calculator.displayNumber);
+        }
     }
     if (calculator.operator === "/") {
-        result = parseFloat(calculator.firstNumber) / parseFloat(calculator.displayNumber);
+        if(value_1 != 0 && value_2 != 0){
+            result = parseFloat((value_1)/100) / parseFloat((value_2)/100);
+        } else {
+            result = parseFloat(calculator.firstNumber) / parseFloat(calculator.displayNumber);
+        }
     }
     if (calculator.operator === "-") {
-        result = parseFloat(calculator.firstNumber) - parseFloat(calculator.displayNumber);
+        if(value_1 != 0 && value_2 != 0){
+            result = parseFloat((value_1)/100) - parseFloat((value_2)/100);
+        } else {
+            result = parseFloat(calculator.firstNumber) - parseFloat(calculator.displayNumber);
+        }
     }
   
     // objek yang akan dikirimkan sebagai argumen fungsi putHistory()
@@ -108,6 +129,14 @@ const calculator = {
             handleOperator(target.innerText)
             updateDisplay();
             return;
+        }
+
+        if (target.classList.contains('percent')) {
+            if(value_1 == 0){
+                value_1 = document.getElementsByTagName('h1')[0].innerText;
+            } else {
+                value_2 = document.getElementsByTagName('h1')[0].innerText;
+            }
         }
          
         inputDigit(target.innerText);
